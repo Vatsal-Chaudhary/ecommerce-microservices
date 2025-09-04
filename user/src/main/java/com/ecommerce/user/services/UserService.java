@@ -28,6 +28,7 @@ public class UserService {
 
     public void addUser(UserRequest userRequest) {
         String token = keyCloakAdminService.getAdminAccessToken();
+        System.out.println(token);
         String keycloakUserId = keyCloakAdminService.createUser(token, userRequest);
         User user = new User();
         mapFromUserRequest(user, userRequest);

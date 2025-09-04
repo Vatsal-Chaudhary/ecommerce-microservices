@@ -10,5 +10,5 @@ import org.springframework.web.service.annotation.HttpExchange;
 public interface ProductServiceClient {
 
     @GetExchange("/api/products/{id}")
-    ProductResponse getProductDetails(@PathVariable Long id);
+    ProductResponse getProductDetails(@PathVariable("id") Long id);
 }

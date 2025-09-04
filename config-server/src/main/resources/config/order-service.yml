@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/orderdb
-    username: ${DB_USER}
-    password: ${DB_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: jaat
     driver-class-name: org.postgresql.Driver
   jpa:
     database: postgresql
@@ -63,8 +63,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
   instance:
-    ip-address: 172.20.32.1
-    prefer-ip-address: true
+    prefer-ip-address: false
 
 logging:
   file:

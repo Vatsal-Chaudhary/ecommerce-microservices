@@ -1,7 +1,7 @@
 services:
   postgres:
-    container_name: postgres_container
-    image: postgres:14
+    container_name: postgres
+    image: postgres:latest
     environment:
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: jaat
@@ -9,62 +9,99 @@ services:
     volumes:
       - postgres:/data/postgres
     ports:
-      - 5432:5432
+      - "5432:5432"
     networks:
       - backend
     restart: unless-stopped
 
-  pgadmin:
-    container_name: pgadmin_container
-    image: dpage/pgadmin4
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: unless-stopped
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
-      PGADMIN_CONFIG_SERVER_MODE: 'False'
-    volumes:
-      - pgadmin:/var/lib/pgadmin
+      MONGO_INITDB_DATABASE: userdb
     ports:
-      - 5050:80
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
     networks:
       - backend
-    restart: unless-stopped
 
   keycloak:
-    image: quay.io/keycloak/keycloak:latest
-    container_name: keycloak
+    image: quay.io/keycloak/keycloak:26.3.3
+    container_name: ecom_keycloak
     environment:
-      KC_DB: postgres
-      KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
-      KC_DB_USERNAME: postgres
-      KC_DB_PASSWORD: jaat
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin
-      KC_HOSTNAME_STRICT: false
-      KC_HOSTNAME_STRICT_HTTPS: false
-      KC_HTTP_ENABLED: true
-    command:
-      - start-dev
-    volumes:
-      - keycloak_data:/opt/keycloak/data
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
     ports:
-      - "8443:8080"
-    depends_on:
-      - postgres
+      - "8181:8080"
+    restart: unless-stopped
+    command: start-dev
     networks:
       - backend
 
-#  rabbitmq:
-#    container_name: rabbitmq_container
-#    image: rabbitmq:4-management
-#    environment:
-#      RABBITMQ_DEFAULT_USER: guest
-#      RABBITMQ_DEFAULT_PASS: guest
+#  config-server:
+#    build:
+#      context: ./config-server
+#      dockerfile: Dockerfile
+#    container_name: config-server
 #    ports:
-#      - "5672:5672"
-#      - "15672:15672"
+#      - "8888:8888"
+#    volumes:
+#      - ./config-server/src/main/resources/config:/app/config
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
 #    networks:
 #      - backend
-#    restart: unless-stopped
+
+  redis:
+    image: redis:alpine
+    container_name: ecom_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - backend
+    restart: unless-stopped
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    container_name: ecom_zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - backend
+    restart: unless-stopped
+
+  kafka:
+    image: confluentinc/cp-kafka:7.4.0
+    container_name: ecom_kafka
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_HEAP_OPTS: "-Xmx512m -Xms512m"
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:29092,EXTERNAL://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_LISTENERS: INTERNAL://0.0.0.0:29092,EXTERNAL://0.0.0.0:9092
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    ports:
+      - "9092:9092"
+    networks:
+      - backend
+    restart: unless-stopped
+
+  zipkin:
+    image: openzipkin/zipkin:latest
+    container_name: ecom_zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - backend
+    restart: unless-stopped
 
 networks:
   backend:
@@ -72,5 +109,5 @@ networks:
 
 volumes:
   postgres:
-  pgadmin:
   keycloak_data:
+  mongodb_data:

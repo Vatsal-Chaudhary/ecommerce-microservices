@@ -9,5 +9,5 @@ import org.springframework.web.service.annotation.HttpExchange;
 public interface UserServiceClient {
 
     @GetExchange("/api/users/{id}")
-    UserResponse getUserDetails(@PathVariable String id);
+    UserResponse getUserDetails(@PathVariable("id") String id);
 }

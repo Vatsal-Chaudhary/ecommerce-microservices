@@ -34,9 +34,6 @@ public class KeyCloakAdminService {
     @Value("${keycloak.admin.client-uid}")
     private String clientUid;
 
-    @Value("${keycloak.admin.client-secret}")
-    private String clientSecret;
-
     private final RestTemplate restTemplate = new RestTemplate();
 
     public String getAdminAccessToken() {
@@ -44,8 +41,12 @@ public class KeyCloakAdminService {
         params.add("client_id", clientId);
         params.add("username", adminUsername);
         params.add("password", adminPassword);
-        params.add("grant_type", "client_credentials");
-        params.add("client_secret", clientSecret);
+        params.add("grant_type", "password");
+        System.out.println("client_id = " + clientId);
+        System.out.println("username = " + adminUsername);
+        System.out.println("password = " + adminPassword);
+        System.out.println("realm = " + realm);
+        System.out.println("keycloakServerUrl = " + keycloakServerUrl);
 
 
         HttpHeaders headers = new HttpHeaders();
@@ -58,8 +59,9 @@ public class KeyCloakAdminService {
                 requestEntity,
                 Map.class
         );
-
-        return response.getBody().get("access_token").toString();
+        String token = response.getBody().get("access_token").toString();
+        System.out.println(token);
+        return token;
     }
 
     public String createUser(String token, UserRequest userRequest) {

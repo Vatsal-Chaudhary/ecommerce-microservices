@@ -1,7 +1,9 @@
 # Ignore environment files
-.env
+user/.env
 .env.local
 .env.*.local
+# Ignore Loki/Minio data
+additional/*/.data/
 
 # Ignore IntelliJ IDEA project files
 .idea/

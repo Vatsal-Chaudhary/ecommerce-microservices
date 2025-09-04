@@ -19,8 +19,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
   instance:
-    ip-address: 172.20.32.1
-    prefer-ip-address: true
+    prefer-ip-address: false
 
 logging:
   file:
@@ -53,8 +52,7 @@ keycloak:
   admin:
     username: user
     password: user
-    server-url: "http://localhost:8443"
+    server-url: "http://localhost:8181"
     realm: ${KEYCLOAK_REALM}
     client-id: ${KEYCLOAK_CLIENT_ID}
     client-uid: ${KEYCLOAK_CLIENT_UID}
-    client-secret: ${KEYCLOAK_CLIENT_SECRET}

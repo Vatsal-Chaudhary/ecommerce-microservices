@@ -7,6 +7,6 @@ spring:
     config:
       server:
         native:
-            search-locations: file:///D:\JAVA-spring\MicroServices\ecom-microservices\config-server\src\main\resources\config
+            search-locations: classpath:/config
 server:
   port: 8888
