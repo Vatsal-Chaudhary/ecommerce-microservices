@@ -8,7 +8,7 @@ additional/*/.data/
 # Ignore IntelliJ IDEA project files
 .idea/
 *.iml
-
+./vscode
 # Ignore logs
 logs/
 *.log
