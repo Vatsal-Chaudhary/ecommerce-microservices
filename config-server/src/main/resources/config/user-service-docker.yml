@@ -1,0 +1,61 @@
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+      database: userdb
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: false
+
+logging:
+  file:
+    name: logs/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      max-file-size: 5MB
+      max-history: 7
+
+server:
+  port: 8082
+
+# Keycloak configuration
+#  @Value("${keycloak.admin.username}")
+#  private String adminUsername;
+#
+#  @Value("${keycloak.admin.password}")
+#  private String adminPassword;
+#
+#  @Value("${keycloak.admin.server-url}")
+#  private String keycloakServerUrl;
+#
+#  @Value("${keycloak.admin.realm}")
+#  private String realm;
+#
+#  @Value("${keycloak.admin.client-id}")
+#  private String clientId;
+
+keycloak:
+  admin:
+    username: user
+    password: user
+    server-url: "http://keycloak:8080"
+    realm: ${KEYCLOAK_REALM}
+    client-id: ${KEYCLOAK_CLIENT_ID}
+    client-uid: ${KEYCLOAK_CLIENT_UID}
