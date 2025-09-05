@@ -21,7 +21,7 @@ spring:
           content-type: application/json
       kafka:
         binder:
-          brokers: localhost:9092
+          brokers: kafka:29092
 
 #rabbitmq:
 #  exchange:
