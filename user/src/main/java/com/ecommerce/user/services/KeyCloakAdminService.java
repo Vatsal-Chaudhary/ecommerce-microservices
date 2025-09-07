@@ -54,14 +54,14 @@ public class KeyCloakAdminService {
         HttpEntity<MultiValueMap<String, String>> requestEntity = new HttpEntity<>(params, headers);
 
         String url = keycloakServerUrl + "/realms/" + realm +  "/protocol/openid-connect/token";
-        ResponseEntity<Map> response = restTemplate.postForEntity(
-                url,
-                requestEntity,
-                Map.class
-        );
-        String token = response.getBody().get("access_token").toString();
-        System.out.println(token);
-        return token;
+        try {
+            ResponseEntity<Map> response = restTemplate.postForEntity(url, requestEntity, Map.class);
+            String token = response.getBody().get("access_token").toString();
+            System.out.println("Access Token: " + token);
+            return token;
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to obtain admin access token from Keycloak: " + e.getMessage(), e);
+        }
     }
 
     public String createUser(String token, UserRequest userRequest) {

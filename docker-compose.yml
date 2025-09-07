@@ -8,7 +8,6 @@ services:
       PG_DATA: /data/postgres
     volumes:
       - postgres:/data/postgres
-      - ./init-db:/docker-entrypoint-initdb.d
     ports:
       - "5432:5432"
     networks:
@@ -323,6 +322,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=docker
       - ISSUER_URI=${ISSUER_URI}
+      - JWKS_URI=${JWKS_URI}
     ports:
       - "8080:8080"
     depends_on:
@@ -335,6 +335,8 @@ services:
       zipkin:
         condition: service_started
       mongodb:
+        condition: service_started
+      redis:
         condition: service_started
     networks:
       - backend

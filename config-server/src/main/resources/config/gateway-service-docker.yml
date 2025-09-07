@@ -39,6 +39,7 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: ${ISSUER_URI}
+          jwks-uri: ${JWKS_URI}
 
 server:
   port: 8080
