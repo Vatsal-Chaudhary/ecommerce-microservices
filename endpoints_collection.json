@@ -1,0 +1,1781 @@
+{
+	"info": {
+		"_postman_id": "8df53c48-bcb0-4ba6-9f22-8489d371fc51",
+		"name": "Spring Boot Microservices Professional eCommerce Masterclass",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30766866"
+	},
+	"item": [
+		{
+			"name": "Ecommerce Microservices",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Create User",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"John2\",\r\n    \"lastName\": \"Doe2\",\r\n    \"email\": \"john@gmail.com\",\r\n    \"phone\": \"335128571\",\r\n    \"address\": {\r\n        \"street\": \"123 Main St\",\r\n        \"city\": \"New York\",\r\n        \"state\": \"NY\",\r\n        \"country\": \"USA\",\r\n        \"zipcode\": \"10001\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"John Updated\",\r\n    \"lastName\": \"Doe Updated\",\r\n    \"email\": \"john@gmail.com\",\r\n    \"phone\": \"335128571\",\r\n    \"address\": {\r\n        \"street\": \"123 Main St\",\r\n        \"city\": \"New York\",\r\n        \"state\": \"NY\",\r\n        \"country\": \"USA\",\r\n        \"zipcode\": \"10001\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/api/users/67d533476a55cf5c8124a59c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"users",
+										"67d533476a55cf5c8124a59c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Users",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get a User",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/api/users/67d533476a55cf5c8124a59c",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"users",
+										"67d533476a55cf5c8124a59c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Create Product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"iPhone 16 Pro\",\r\n    \"description\": \"Latest iPhone with amazing features\",\r\n    \"price\": 1099.99,\r\n    \"stockQuantity\": 50,\r\n    \"category\": \"Electronics\",\r\n    \"imageUrl\": \"https://placehold.co/600x400\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"iPhone 16 Pro Updated\",\r\n    \"description\": \"Latest iPhone with amazing features\",\r\n    \"price\": 1099.99,\r\n    \"stockQuantity\": 50,\r\n    \"category\": \"Electronics\",\r\n    \"imageUrl\": \"https://placehold.co/600x400\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/products/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"iPhone 16 Pro Updated\",\r\n    \"description\": \"Latest iPhone with amazing features\",\r\n    \"price\": 1099.99,\r\n    \"stockQuantity\": 50,\r\n    \"category\": \"Electronics\",\r\n    \"imageUrl\": \"https://placehold.co/600x400\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/products/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/api/products/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"products",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search Products",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"iPhone 16 Pro Updated\",\r\n    \"description\": \"Latest iPhone with amazing features\",\r\n    \"price\": 1099.99,\r\n    \"stockQuantity\": 50,\r\n    \"category\": \"Electronics\",\r\n    \"imageUrl\": \"https://placehold.co/600x400\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8081/api/products/search?keyword=iphone",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"api",
+										"products",
+										"search"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "iphone"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cart",
+					"item": [
+						{
+							"name": "Add Product to Cart",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-User-ID",
+										"value": "67d533476a55cf5c8124a59c",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": \"1\",\r\n    \"quantity\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/cart",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Cart",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-User-ID",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8083/api/cart",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "X-User-ID",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8083/api/cart/items/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"cart",
+										"items",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Place Order",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-User-ID",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8083/api/orders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "X-User-ID",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Config Server",
+					"item": [
+						{
+							"name": "Actuator Refresh",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/actuator/refresh",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"actuator",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Decrypt",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/plain",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "AYCwNQERIgLO9lIkqwk0Cn5luAoybPGL36sqbl1O+5q73Ad1+n0nFNnwRT0VJORBTFBBRXuR5Qy95tldyVJxaAlFxaPIC1X82V+cYfm2aI5VI16rfazvJWkMYrv9iKm+yVPOnu8dsz38+lqw9BxCLVXFPgZEtkoBz/OuseeNUEd0StpLyTcIqkcmQhmLWylSDU5HuB/AShFqSBNA7kr8sjf5lilhOz4Bftg9zt5Gbr51JKnTXiW7ltj7Y8Cr80k79GKvUJ8k1FpgiIy/YHVthos5feYwVydSN5GwOuntuclbGa03zv5LeVUqJkqc6zLE7Y6CgX/k1buATCo+TbO9fG094HPtF+BBJ7NkNBzcLqlLaLMlSzBGLwyIGks9WpmSwmTdG5PzIBAlfzsBKC0dSoZbKyKqFdQdv3lQanPlyr+pd3JdQSKFSkhWDgIEpDWYx5dazEF9f2AUPXcPuI6PQK/GiNcJ3IhwGwmkPwsJLMK+E11zFBAIoh+5xzjn5SXzlwquqLamoiGx8nFPHrLTeKTNaufQMmPZCxfESltQUT2mRe1/Yy7OszhiSqxYs0z97ZPwdvLRK9TyFmcYmMtHrt71",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8888/decrypt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"decrypt"
+									],
+									"query": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Encrypt",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "Prod Message",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8888/encrypt",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8888",
+									"path": [
+										"encrypt"
+									]
+								},
+								"description": "Generated from cURL: curl --location 'http://localhost:8888/encrypt' \\\r\n--header 'Content-Type: text/plain' \\\r\n--data 'Prod Message'\r\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Actuator Bus Refresh",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8081/actuator/busrefresh",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8081",
+									"path": [
+										"actuator",
+										"busrefresh"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Gateway",
+					"item": [
+						{
+							"name": "User API Gateway",
+							"item": [
+								{
+									"name": "Create User",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"firstName\": \"John2\",\r\n    \"lastName\": \"Doe2\",\r\n    \"email\": \"john@gmail.com\",\r\n    \"phone\": \"335128571\",\r\n    \"address\": {\r\n        \"street\": \"123 Main St\",\r\n        \"city\": \"New York\",\r\n        \"state\": \"NY\",\r\n        \"country\": \"USA\",\r\n        \"zipcode\": \"10001\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/users",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update User",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"firstName\": \"John Updated\",\r\n    \"lastName\": \"Doe Updated\",\r\n    \"email\": \"john@gmail.com\",\r\n    \"phone\": \"335128571\",\r\n    \"address\": {\r\n        \"street\": \"123 Main St\",\r\n        \"city\": \"New York\",\r\n        \"state\": \"NY\",\r\n        \"country\": \"USA\",\r\n        \"zipcode\": \"10001\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/users/67d533476a55cf5c8124a59c",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"users",
+												"67d533476a55cf5c8124a59c"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Users",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer 123",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/api/users",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"users"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": null,
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get a User",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/api/users/67d533476a55cf5c8124a59c",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"users",
+												"67d533476a55cf5c8124a59c"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Products API Gateway",
+							"item": [
+								{
+									"name": "Create Product",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"iPhone 16 Pro\",\r\n    \"description\": \"Latest iPhone with amazing features\",\r\n    \"price\": 1099.99,\r\n    \"stockQuantity\": 50,\r\n    \"category\": \"Electronics\",\r\n    \"imageUrl\": \"https://placehold.co/600x400\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/products",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Product",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"iPhone 16 Pro Updated\",\r\n    \"description\": \"Latest iPhone with amazing features\",\r\n    \"price\": 1099.99,\r\n    \"stockQuantity\": 50,\r\n    \"category\": \"Electronics\",\r\n    \"imageUrl\": \"https://placehold.co/600x400\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/products/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"products",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Product",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"iPhone 16 Pro Updated\",\r\n    \"description\": \"Latest iPhone with amazing features\",\r\n    \"price\": 1099.99,\r\n    \"stockQuantity\": 50,\r\n    \"category\": \"Electronics\",\r\n    \"imageUrl\": \"https://placehold.co/600x400\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/products/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"products",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get All Products",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/api/products",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Products By Id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/api/products/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"products",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Search Products",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"iPhone 16 Pro Updated\",\r\n    \"description\": \"Latest iPhone with amazing features\",\r\n    \"price\": 1099.99,\r\n    \"stockQuantity\": 50,\r\n    \"category\": \"Electronics\",\r\n    \"imageUrl\": \"https://placehold.co/600x400\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/products/search?keyword=iphone",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"products",
+												"search"
+											],
+											"query": [
+												{
+													"key": "keyword",
+													"value": "iphone"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Cart API Gateway",
+							"item": [
+								{
+									"name": "Add Product to Cart",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-User-ID",
+												"value": "67d533476a55cf5c8124a59c",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"productId\": \"2\",\r\n    \"quantity\": 2\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/cart",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"cart"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Cart",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-User-ID",
+												"value": "1",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/api/cart",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"cart"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "X-User-ID",
+												"value": "1",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/api/cart/items/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"cart",
+												"items",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Order API Gateway",
+							"item": [
+								{
+									"name": "Place Order",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-User-ID",
+												"value": "67d533476a55cf5c8124a59c",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/api/orders",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"orders"
+											],
+											"query": [
+												{
+													"key": "X-User-ID",
+													"value": "1",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Simulate Failure Product Service",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Gateway Security",
+					"item": [
+						{
+							"name": "User API Gateway",
+							"item": [
+								{
+									"name": "Create User",
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": [
+												{
+													"key": "clientId",
+													"value": "oauth2-pkce",
+													"type": "string"
+												},
+												{
+													"key": "accessTokenUrl",
+													"value": "http://localhost:8181/realms/ecom-app/protocol/openid-connect/token",
+													"type": "string"
+												},
+												{
+													"key": "authUrl",
+													"value": "http://localhost:8181/realms/ecom-app/protocol/openid-connect/auth",
+													"type": "string"
+												},
+												{
+													"key": "tokenName",
+													"value": "ecom-pkce",
+													"type": "string"
+												},
+												{
+													"key": "clientSecret",
+													"value": "",
+													"type": "string"
+												},
+												{
+													"key": "grant_type",
+													"value": "authorization_code_with_pkce",
+													"type": "string"
+												},
+												{
+													"key": "scope",
+													"value": "openid profile email roles",
+													"type": "string"
+												},
+												{
+													"key": "redirect_uri",
+													"value": "http://localhost:5173",
+													"type": "string"
+												},
+												{
+													"key": "useBrowser",
+													"value": false,
+													"type": "boolean"
+												},
+												{
+													"key": "challengeAlgorithm",
+													"value": "S256",
+													"type": "string"
+												},
+												{
+													"key": "addTokenTo",
+													"value": "header",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"vatsalchaudhary\",\r\n    \"firstName\": \"vatsal\",\r\n    \"lastName\": \"chaudhary\",\r\n    \"email\": \"vatsal@gmail.com\",\r\n    \"password\": \"jaat\",\r\n    \"phone\": \"335128571\",\r\n    \"address\": {\r\n        \"street\": \"123 Main St\",\r\n        \"city\": \"New York\",\r\n        \"state\": \"NY\",\r\n        \"country\": \"USA\",\r\n        \"zipcode\": \"10001\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/users",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update User",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"firstName\": \"John Updated\",\r\n    \"lastName\": \"Doe Updated\",\r\n    \"email\": \"john@gmail.com\",\r\n    \"phone\": \"335128571\",\r\n    \"address\": {\r\n        \"street\": \"123 Main St\",\r\n        \"city\": \"New York\",\r\n        \"state\": \"NY\",\r\n        \"country\": \"USA\",\r\n        \"zipcode\": \"10001\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/users/67d533476a55cf5c8124a59c",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"users",
+												"67d533476a55cf5c8124a59c"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Users",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer 123",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/api/users",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"users"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": null,
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get a User",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/api/users/67d533476a55cf5c8124a59c",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"users",
+												"67d533476a55cf5c8124a59c"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Products API Gateway",
+							"item": [
+								{
+									"name": "Create Product",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"iPhone 16 Pro\",\r\n    \"description\": \"Latest iPhone with amazing features\",\r\n    \"price\": 1099.99,\r\n    \"stockQuantity\": 50,\r\n    \"category\": \"Electronics\",\r\n    \"imageUrl\": \"https://placehold.co/600x400\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/products",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Product",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"iPhone 16 Pro Updated\",\r\n    \"description\": \"Latest iPhone with amazing features\",\r\n    \"price\": 1099.99,\r\n    \"stockQuantity\": 50,\r\n    \"category\": \"Electronics\",\r\n    \"imageUrl\": \"https://placehold.co/600x400\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/products/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"products",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Product",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"iPhone 16 Pro Updated\",\r\n    \"description\": \"Latest iPhone with amazing features\",\r\n    \"price\": 1099.99,\r\n    \"stockQuantity\": 50,\r\n    \"category\": \"Electronics\",\r\n    \"imageUrl\": \"https://placehold.co/600x400\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/products/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"products",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get All Products",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/api/products",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"products"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Products By Id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/api/products/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"products",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Search Products",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"iPhone 16 Pro Updated\",\r\n    \"description\": \"Latest iPhone with amazing features\",\r\n    \"price\": 1099.99,\r\n    \"stockQuantity\": 50,\r\n    \"category\": \"Electronics\",\r\n    \"imageUrl\": \"https://placehold.co/600x400\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/products/search?keyword=iphone",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"products",
+												"search"
+											],
+											"query": [
+												{
+													"key": "keyword",
+													"value": "iphone"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Cart API Gateway",
+							"item": [
+								{
+									"name": "Add Product to Cart",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-User-ID",
+												"value": "67d533476a55cf5c8124a59c",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"productId\": \"2\",\r\n    \"quantity\": 2\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8080/api/cart",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"cart"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Cart",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-User-ID",
+												"value": "1",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/api/cart",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"cart"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "X-User-ID",
+												"value": "1",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/api/cart/items/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"cart",
+												"items",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Order API Gateway",
+							"item": [
+								{
+									"name": "Place Order",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-User-ID",
+												"value": "67d533476a55cf5c8124a59c",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8080/api/orders",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"api",
+												"orders"
+											],
+											"query": [
+												{
+													"key": "X-User-ID",
+													"value": "1",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Simulate Failure Product Service",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Keycloak Admin  API",
+					"item": [
+						{
+							"name": "Get Admin Token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "client_id",
+											"value": "admin-cli",
+											"type": "text"
+										},
+										{
+											"key": "username",
+											"value": "user",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "user",
+											"type": "text"
+										},
+										{
+											"key": "grant_type",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8181/realms/ecom-app/protocol/openid-connect/token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8181",
+									"path": [
+										"realms",
+										"ecom-app",
+										"protocol",
+										"openid-connect",
+										"token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Keycloak user",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1ZVRuWXYxcV9xVHY3WHY4aFE1Ylhybjl4d3NlQXFQZ050VlhRVkFOcVF3In0.eyJleHAiOjE3NTY5ODM2NDksImlhdCI6MTc1Njk4MzM0OSwianRpIjoib25sdHJvOjA0YWU3YTIxLTAwZjQtNDgxNS04YTljLTM2YzdhMDkwODg2MiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODE4MS9yZWFsbXMvZWNvbS1hcHAiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzaWQiOiIzZDRkNjgzMC01YjgwLTRkMWEtYTg0Ni1hODQ5ZGEzNDEwYmUiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.YKous4VtNOXuiI41QeDmxHR0bH9gbC8llzy3YtSU3pk2saKhYW790mNoTGlc0krymBEexwBCFBNcScNpWOqvyNmuwTrly1_8a-w--4GyeyxGtPS4XfJCiDW5Nm42gDt557KNHnRQUh7yhRGIe2381atG9t8wvv3yHTNMSTCVU-l0Gmeq70yInL-7i9vCj9-dEr4HXPBZ46rplWBx4sUNN8WjEIQ2tJmQxUaq-LPXp0DfsrKXHsdU1fthpFxzjm6U7Ao-TkPfNYAmrU63XsCaSqmLuxnbwfWwAEvVxtVmIqIHhJPZOgIW7holLK86RtS0xBpN62DUKG8-KNkI8oyQYg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"usernew\",\r\n    \"email\": \"usernew@email.com\",\r\n    \"enabled\": true,\r\n    \"firstName\": \"New First Name\",\r\n    \"lastName\": \"new last name\",\r\n    \"credentials\": [\r\n        {\r\n        \"type\": \"password\",\r\n        \"value\": \"usernew\",\r\n        \"temporary\": \"false\"\r\n    }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8181/admin/realms/ecom-app/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8181",
+									"path": [
+										"admin",
+										"realms",
+										"ecom-app",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Realm Role by name",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1ZVRuWXYxcV9xVHY3WHY4aFE1Ylhybjl4d3NlQXFQZ050VlhRVkFOcVF3In0.eyJleHAiOjE3NTY5ODcxOTcsImlhdCI6MTc1Njk4Njg5NywianRpIjoib25sdHJvOjNmZTg3ZDUyLTNhYzMtOTZiNi0yOTc0LTdhYTQzZDBlNTZlNSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODE4MS9yZWFsbXMvZWNvbS1hcHAiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzaWQiOiIxYWVlMTg0MC1hOTkwLTQwMDItOTYyMC1kYTE5NzVkMzI2ZTgiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.c2ZE3jKxKhEfcapq2cK6VFVjeHF6e6B4sRiZHh1iRID_o6hBxn49jnGD8MVEWsM8qPLT8FfRhoQETnRnIm1SuBL4eRuHip7KM3wCJ9IV1_tDc9AkUrwKdKj6VRwPuxXGRgMwWL6GRtcYJewh2YZXDaLbpifIf4OL6gvdy4ZHGjWcNFc5U7KVUq-MQqzUo9wqBrQdAnySXJJPy9YCBQ8C0gwb0xEe0z4ZjlKbh-JHdIjH6BzVf8LCh28A2UBWqzdegNqAPgk9FnD4T7J977-5Db8sjJwpmTjDYndo5SLMw9WQrQfflnUfiC3LcIB0CBC28Lrz8TwbqrYyB0Po_8_WVg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"usernew\",\r\n    \"email\": \"usernew@email.com\",\r\n    \"enabled\": true,\r\n    \"firstName\": \"New First Name\",\r\n    \"lastName\": \"new last name\",\r\n    \"credentials\": [\r\n        {\r\n        \"type\": \"password\",\r\n        \"value\": \"usernew\",\r\n        \"temporary\": \"false\"\r\n    }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8181/admin/realms/ecom-app/roles/offline_access",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8181",
+									"path": [
+										"admin",
+										"realms",
+										"ecom-app",
+										"roles",
+										"offline_access"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Assign Realm Role to the Use",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1ZVRuWXYxcV9xVHY3WHY4aFE1Ylhybjl4d3NlQXFQZ050VlhRVkFOcVF3In0.eyJleHAiOjE3NTY5ODk5ODMsImlhdCI6MTc1Njk4OTY4MywianRpIjoib25sdHJvOjcwYTA3N2ViLTNiNzEtYWU3Yi0zYWE1LTc4YjE1ODM4MDMzNCIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODE4MS9yZWFsbXMvZWNvbS1hcHAiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzaWQiOiI0MjQ1ZDlmMy1lYWE3LTQwZTYtYmY0Yi1lM2U2MDJmODFkYjciLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.IIEQbEEQEQfcZKKKlDUgZJaBzn-jhDa3unWrdTuehhCfjcwaWwktGzMK4fiHherT0PWrx0ZV307HqpHFAJM7E4dJ8Sm4Z9a2ao1OgVeb1A6YgPpw34SdjkXVJuSJw1FiMsXqd3sskauWBXk1zjtx9JOCiO6noamn8tjoFybcUoOJTGLxt2te_xVT-ThDy9xJh3ONEzkAc6ybhJl1cwIl3wIwFIqaBpMOhWLhZTmcI4BcEm2E_Zw0CbZWYa3NeX48F0R_HFDKLNTKYcgXnc8i9r4ZjN1XfMaEPAEIC_i5cNUMypA65h70J3UgO5SRo2mIlQM9qZadOtErbgRI5zYRqg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"id\": \"5bdb8311-aa02-4fdc-a7cf-c9b2fd74aa2c\",\r\n        \"name\": \"offline_access\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8181/admin/realms/ecom-app/users/380f6b8b-e772-42ff-ab51-15f4f8e6ccfb/role-mappings/realm",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8181",
+									"path": [
+										"admin",
+										"realms",
+										"ecom-app",
+										"users",
+										"380f6b8b-e772-42ff-ab51-15f4f8e6ccfb",
+										"role-mappings",
+										"realm"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Client Role by Name",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1ZVRuWXYxcV9xVHY3WHY4aFE1Ylhybjl4d3NlQXFQZ050VlhRVkFOcVF3In0.eyJleHAiOjE3NTY5ODk5ODMsImlhdCI6MTc1Njk4OTY4MywianRpIjoib25sdHJvOjcwYTA3N2ViLTNiNzEtYWU3Yi0zYWE1LTc4YjE1ODM4MDMzNCIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODE4MS9yZWFsbXMvZWNvbS1hcHAiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzaWQiOiI0MjQ1ZDlmMy1lYWE3LTQwZTYtYmY0Yi1lM2U2MDJmODFkYjciLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.IIEQbEEQEQfcZKKKlDUgZJaBzn-jhDa3unWrdTuehhCfjcwaWwktGzMK4fiHherT0PWrx0ZV307HqpHFAJM7E4dJ8Sm4Z9a2ao1OgVeb1A6YgPpw34SdjkXVJuSJw1FiMsXqd3sskauWBXk1zjtx9JOCiO6noamn8tjoFybcUoOJTGLxt2te_xVT-ThDy9xJh3ONEzkAc6ybhJl1cwIl3wIwFIqaBpMOhWLhZTmcI4BcEm2E_Zw0CbZWYa3NeX48F0R_HFDKLNTKYcgXnc8i9r4ZjN1XfMaEPAEIC_i5cNUMypA65h70J3UgO5SRo2mIlQM9qZadOtErbgRI5zYRqg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"id\": \"5bdb8311-aa02-4fdc-a7cf-c9b2fd74aa2c\",\r\n        \"name\": \"offline_access\"\r\n    }\r\n]"
+								},
+								"url": {
+									"raw": "http://localhost:8181/admin/realms/ecom-app/clients/5c1041f7-40e4-4245-8d5f-f866e408ab16/roles/USER",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8181",
+									"path": [
+										"admin",
+										"realms",
+										"ecom-app",
+										"clients",
+										"5c1041f7-40e4-4245-8d5f-f866e408ab16",
+										"roles",
+										"USER"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Assign Client Role to User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1ZVRuWXYxcV9xVHY3WHY4aFE1Ylhybjl4d3NlQXFQZ050VlhRVkFOcVF3In0.eyJleHAiOjE3NTY5OTA0MDQsImlhdCI6MTc1Njk5MDEwNCwianRpIjoib25sdHJvOjhiZjIzOGNiLTk2YjUtNDFiNC1lZjQzLTIxMThjNzAxNWI1YyIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODE4MS9yZWFsbXMvZWNvbS1hcHAiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzaWQiOiIwYTRlMDQ4NC0xZTkxLTQwOWMtOTJkNC02M2RhMGNiMGY4ZjEiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.gqdmilwbgLuKSSurJyk__ValS4wqaa-rb_E20JIyIWr9d7oVx8Eli6Thd10EmgOx2-jp3Drue-uudnoqxWxNkNVC5cq36AmxMPp7C0utIZTnamLO-vBLg3J1J7oZ3sfbSJd3NNQKt4dOSdsoQukFk1vBxppGL1bdIkEcVG0VY1OBznwHk2xeeCHcMXSHfunkFl_YgbvUZFlF6P9LGEd1SgGNMjU2JyQZWvQB0JAMkrea3jDvoutSYKhSKJADkjWfI5eRQOP8kI0EWxrcpbmZHsDX_EdddVal0tVgj97VK4H3S4pULu-QHYhdMJY5jpubas5NO2SbCUCvA02lTjCWjw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"id\": \"1d78fe6f-3ad8-4b9e-8440-aa2c8d590204\",\r\n        \"name\": \"USER\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8181/admin/realms/ecom-app/users/380f6b8b-e772-42ff-ab51-15f4f8e6ccfb/role-mappings/clients/5c1041f7-40e4-4245-8d5f-f866e408ab16",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8181",
+									"path": [
+										"admin",
+										"realms",
+										"ecom-app",
+										"users",
+										"380f6b8b-e772-42ff-ab51-15f4f8e6ccfb",
+										"role-mappings",
+										"clients",
+										"5c1041f7-40e4-4245-8d5f-f866e408ab16"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
