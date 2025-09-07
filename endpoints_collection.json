@@ -1575,11 +1575,6 @@
 										"key": "Content-Type",
 										"value": "application/json",
 										"type": "text"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1ZVRuWXYxcV9xVHY3WHY4aFE1Ylhybjl4d3NlQXFQZ050VlhRVkFOcVF3In0.eyJleHAiOjE3NTY5ODM2NDksImlhdCI6MTc1Njk4MzM0OSwianRpIjoib25sdHJvOjA0YWU3YTIxLTAwZjQtNDgxNS04YTljLTM2YzdhMDkwODg2MiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODE4MS9yZWFsbXMvZWNvbS1hcHAiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzaWQiOiIzZDRkNjgzMC01YjgwLTRkMWEtYTg0Ni1hODQ5ZGEzNDEwYmUiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUifQ.YKous4VtNOXuiI41QeDmxHR0bH9gbC8llzy3YtSU3pk2saKhYW790mNoTGlc0krymBEexwBCFBNcScNpWOqvyNmuwTrly1_8a-w--4GyeyxGtPS4XfJCiDW5Nm42gDt557KNHnRQUh7yhRGIe2381atG9t8wvv3yHTNMSTCVU-l0Gmeq70yInL-7i9vCj9-dEr4HXPBZ46rplWBx4sUNN8WjEIQ2tJmQxUaq-LPXp0DfsrKXHsdU1fthpFxzjm6U7Ao-TkPfNYAmrU63XsCaSqmLuxnbwfWwAEvVxtVmIqIHhJPZOgIW7holLK86RtS0xBpN62DUKG8-KNkI8oyQYg",
-										"type": "text"
 									}
 								],
 								"body": {
